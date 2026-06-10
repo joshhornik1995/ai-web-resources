@@ -359,7 +359,8 @@
     <a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a>
     <a href="#" onclick="showPage('services')" id="nav-services">Services</a>
     <a href="#" onclick="showPage('about')" id="nav-about">About</a>
-    <a href="#" onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</a>
+    <a href="#" onclick="showPage('payment')" id="nav-payment" class="nav-cta">Get Started</a>
+    <a href="#" onclick="showPage('contact')" id="nav-contact">Contact Us</a>
   </div>
 </nav>
 
@@ -377,7 +378,7 @@
       <h1>Your Business,<br>Powered by <em>AI</em></h1>
       <p>We build high-performance websites and intelligent AI solutions that drive real growth for your business. From custom web design to smart automation — we make technology work for you.</p>
       <div class="hero-btns">
-        <button class="btn-primary" onclick="showPage('services')">Explore Services</button>
+        <button class="btn-primary" onclick="showPage('payment')">Get Started →</button>
         <button class="btn-outline" onclick="showPage('contact')">Get a Free Quote</button>
       </div>
       <div class="hero-stats">
@@ -631,7 +632,7 @@
           <div class="contact-icon">✉️</div>
           <div>
             <h4>Email</h4>
-            <p>hello@aiwebresources.com</p>
+            <p>aiwebresources@gmail.com</p>
           </div>
         </div>
         <div class="contact-item">
@@ -644,27 +645,28 @@
       </div>
 
       <div class="contact-form">
+        <input type="hidden" name="access_key" id="w3f-access-key" value="408ce9c7-21be-4d9e-ac20-bc1bd8a068d6">
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" placeholder="John">
+            <input type="text" name="first_name" placeholder="John">
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" placeholder="Smith">
+            <input type="text" name="last_name" placeholder="Smith">
           </div>
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="john@yourbusiness.com">
+          <input type="email" name="email" placeholder="john@yourbusiness.com">
         </div>
         <div class="form-group">
           <label>Business Name</label>
-          <input type="text" placeholder="Your Business Name">
+          <input type="text" name="business_name" placeholder="Your Business Name">
         </div>
         <div class="form-group">
           <label>Service Interested In</label>
-          <select>
+          <select name="service">
             <option value="">Select a service...</option>
             <option>Custom Website Design</option>
             <option>AI Chatbot Integration</option>
@@ -677,7 +679,7 @@
         </div>
         <div class="form-group">
           <label>Tell us about your project</label>
-          <textarea placeholder="Describe your business and what you're looking to achieve..."></textarea>
+          <textarea name="message" placeholder="Describe your business and what you're looking to achieve..."></textarea>
         </div>
         <button class="btn-primary" style="width:100%;" onclick="submitForm()">Send Message →</button>
         <div class="form-success" id="form-success">
@@ -688,12 +690,66 @@
   </section>
 </div>
 
+<!-- ═══════════════ PAYMENT PAGE ═══════════════ -->
+<div id="page-payment" class="page">
+  <section style="max-width:900px; margin:0 auto; padding:80px 5vw;">
+    <div class="section-label">Pricing</div>
+    <h1 class="section-title">Get Started with<br><em style="font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">AI Web Design</em></h1>
+    <p class="section-sub" style="margin-bottom:64px;">One simple package. Everything you need to launch a high-performance, AI-powered website for your business.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:32px;">
+
+      <!-- Setup Fee Card -->
+      <div style="background:var(--surface); border:1px solid var(--border2); border-radius:20px; padding:40px; display:flex; flex-direction:column;">
+        <div style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:500; margin-bottom:16px;">Step 1 — One Time</div>
+        <h2 style="font-size:1.6rem; font-family:'Syne',sans-serif; margin-bottom:8px;">Setup & Launch</h2>
+        <p style="color:var(--text2); font-size:0.95rem; margin-bottom:32px; flex:1;">Custom AI-powered website designed, built, and launched. Includes domain setup, hosting configuration, contact form, and AI integrations.</p>
+        <div style="margin-bottom:32px;">
+          <span style="font-family:'Syne',sans-serif; font-size:3rem; font-weight:800; color:var(--text);">$2,000</span>
+          <span style="color:var(--text3); font-size:0.9rem; margin-left:8px;">one-time</span>
+        </div>
+        <ul style="list-style:none; margin-bottom:36px; display:flex; flex-direction:column; gap:12px;">
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> Custom website design</li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> AI chatbot integration</li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> SEO optimized</li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> Mobile responsive</li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> Contact form & analytics</li>
+        </ul>
+        <a href="https://buy.stripe.com/cNi8wO1Ft04w2H81Z70Fi00" target="_blank" class="btn-primary" style="text-align:center;">Pay Setup Fee →</a>
+      </div>
+
+      <!-- Annual Renewal Card -->
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:40px; display:flex; flex-direction:column;">
+        <div style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent2); font-weight:500; margin-bottom:16px;">Step 2 — Annual</div>
+        <h2 style="font-size:1.6rem; font-family:'Syne',sans-serif; margin-bottom:8px;">Yearly Renewal</h2>
+        <p style="color:var(--text2); font-size:0.95rem; margin-bottom:32px; flex:1;">Keep your site running, secure, and up to date. Includes hosting, maintenance, performance monitoring, and ongoing AI support.</p>
+        <div style="margin-bottom:32px;">
+          <span style="font-family:'Syne',sans-serif; font-size:3rem; font-weight:800; color:var(--text);">$780</span>
+          <span style="color:var(--text3); font-size:0.9rem; margin-left:8px;">/ year</span>
+        </div>
+        <ul style="list-style:none; margin-bottom:36px; display:flex; flex-direction:column; gap:12px;">
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> Hosting & uptime monitoring</li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> Security updates</li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> Performance optimization</li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> AI feature updates</li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; color:var(--text2);"><span style="color:var(--accent3);">✓</span> Priority support</li>
+        </ul>
+        <a href="https://buy.stripe.com/3cI4gy83RcRi95w7jr0Fi01" target="_blank" class="btn-primary" style="text-align:center; background:var(--accent2);">Pay Annual Renewal →</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; color:var(--text3); font-size:0.85rem; margin-top:40px;">Payments are processed securely by Stripe. Have questions? <a href="#" onclick="showPage('contact')" style="color:var(--accent); text-decoration:none;">Contact us</a> before purchasing.</p>
+  </section>
+</div>
+
 <footer>
   <p>© 2025 AI Web Resources · <a href="http://www.aiwebresources.com">aiwebresources.com</a></p>
   <div style="display:flex; gap:24px;">
     <a href="#" onclick="showPage('home')">Home</a>
     <a href="#" onclick="showPage('services')">Services</a>
     <a href="#" onclick="showPage('about')">About</a>
+    <a href="#" onclick="showPage('payment')">Pricing</a>
     <a href="#" onclick="showPage('contact')">Contact</a>
   </div>
 </footer>
@@ -707,14 +763,48 @@ function showPage(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function submitForm() {
-  const btn = document.querySelector('.contact-form .btn-primary');
+async function submitForm() {
+  const form = document.querySelector('.contact-form');
+  const btn = form.querySelector('.btn-primary');
+  const accessKey = document.getElementById('w3f-access-key').value;
+
+  const data = {
+    access_key: accessKey,
+    first_name: form.querySelector('[name="first_name"]').value,
+    last_name: form.querySelector('[name="last_name"]').value,
+    email: form.querySelector('[name="email"]').value,
+    business_name: form.querySelector('[name="business_name"]').value,
+    service: form.querySelector('[name="service"]').value,
+    message: form.querySelector('[name="message"]').value,
+    subject: 'New Contact Form Submission - AI Web Resources'
+  };
+
   btn.textContent = 'Sending...';
   btn.style.opacity = '0.7';
-  setTimeout(() => {
-    btn.style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }, 1200);
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    if (json.success) {
+      btn.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      btn.textContent = 'Send Message →';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email us directly.');
+    }
+  } catch (e) {
+    btn.textContent = 'Send Message →';
+    btn.style.opacity = '1';
+    btn.disabled = false;
+    alert('Network error. Please check your connection and try again.');
+  }
 }
 </script>
 </body>
